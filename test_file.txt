@@ -1,1 +1,2 @@
 This is test .txt file.
+https://github.com/wanowar/test.git - test repository
