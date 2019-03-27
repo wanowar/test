@@ -1,0 +1,307 @@
+﻿usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in '/usr/lib/git-core'
+
+  add                       get-tar-commit-id         remote
+  add--interactive          grep                      remote-ext
+  am                        hash-object               remote-fd
+  annotate                  help                      remote-ftp
+  apply                     http-backend              remote-ftps
+  archive                   http-fetch                remote-http
+  bisect                    http-push                 remote-https
+  bisect--helper            imap-send                 remote-testsvn
+  blame                     index-pack                repack
+  branch                    init                      replace
+  bundle                    init-db                   request-pull
+  cat-file                  instaweb                  rerere
+  check-attr                interpret-trailers        reset
+  check-ignore              log                       rev-list
+  check-mailmap             ls-files                  rev-parse
+  check-ref-format          ls-remote                 revert
+  checkout                  ls-tree                   rm
+  checkout-index            mailinfo                  send-pack
+  cherry                    mailsplit                 sh-i18n--envsubst
+  cherry-pick               merge                     shell
+  clean                     merge-base                shortlog
+  clone                     merge-file                show
+  column                    merge-index               show-branch
+  commit                    merge-octopus             show-index
+  commit-tree               merge-one-file            show-ref
+  config                    merge-ours                stage
+  count-objects             merge-recursive           stash
+  credential                merge-resolve             status
+  credential-cache          merge-subtree             stripspace
+  credential-cache--daemon  merge-tree                submodule
+  credential-store          mergetool                 submodule--helper
+  daemon                    mktag                     subtree
+  describe                  mktree                    symbolic-ref
+  diff                      mv                        tag
+  diff-files                name-rev                  unpack-file
+  diff-index                notes                     unpack-objects
+  diff-tree                 pack-objects              update-index
+  difftool                  pack-redundant            update-ref
+  difftool--helper          pack-refs                 update-server-info
+  fast-export               patch-id                  upload-archive
+  fast-import               prune                     upload-pack
+  fetch                     prune-packed              var
+  fetch-pack                pull                      verify-commit
+  filter-branch             push                      verify-pack
+  fmt-merge-msg             quiltimport               verify-tag
+  for-each-ref              read-tree                 web--browse
+  format-patch              rebase                    whatchanged
+  fsck                      rebase--helper            worktree
+  fsck-objects              receive-pack              write-tree
+  gc                        reflog
+
+
+git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+
+git clone -h
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+
+
+git add -h
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod <(+/-)x>      override the executable bit of the listed files
+
+
+git status -h
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+
+
+git branch -h
+usage: git branch [<options>] [-r | -a] [--merged | --no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      Unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    --list                list branch names
+    -l, --create-reflog   create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+git checkout -h
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -q, --quiet           suppress progress reporting
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --detach              detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    --orphan <new-branch>
+                          new unparented branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -f, --force           force checkout (throw away local modifications)
+    -m, --merge           perform a 3-way merge with the new branch
+    --overwrite-ignore    update ignored files (default)
+    --conflict <style>    conflict style (merge or diff3)
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+
+
+git commit -h
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
